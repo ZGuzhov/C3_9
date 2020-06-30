@@ -4,6 +4,15 @@ const city_form = document.querySelector('.form-group')
 const btn_city = document.querySelector('.btn-city')
 const btn_city_clr = document.querySelector('.btn-city-clr')
 
+const btn_checkbox = document.querySelector('.btn-checkbox')
+const ch1 = document.querySelector('input[id=Check1]')
+const ch2 = document.querySelector('input[id=Check2]')
+const ch3 = document.querySelector('input[id=Check3]')
+const ch4 = document.querySelector('input[id=Check4]')
+const ch5 = document.querySelector('input[id=Check5]')
+const ch6 = document.querySelector('input[id=Check6]')
+
+
 btn_city.onclick = () =>{
 	if (city.value != "") {
 		document.cookie = "city=" + city.value
@@ -48,14 +57,6 @@ if (city_cookie) {
 	city_text.style.cssText = "display: none;"
 	city.value = ""	
 }
-
-const btn_checkbox = document.querySelector('.btn-checkbox')
-const ch1 = document.querySelector('input[id=Check1]')
-const ch2 = document.querySelector('input[id=Check2]')
-const ch3 = document.querySelector('input[id=Check3]')
-const ch4 = document.querySelector('input[id=Check4]')
-const ch5 = document.querySelector('input[id=Check5]')
-const ch6 = document.querySelector('input[id=Check6]')
 
 btn_checkbox.onclick = () =>{
 	let key = ""
