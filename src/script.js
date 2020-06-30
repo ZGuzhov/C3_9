@@ -1,35 +1,46 @@
 const city = document.querySelector('.city')
+const city_text = document.querySelector('.city-text')
+const city_form = document.querySelector('.form-group')
 const btn_city = document.querySelector('.btn-city')
+const btn_city_clr = document.querySelector('.btn-city-clr')
 
 btn_city.onclick = () =>{
 	document.cookie = "city=" + city.value;
-	console.log(document.cookie);
+	btn_city.style.cssText = "display: none;"
+	btn_city_clr.style.cssText = "display: inline-block;"
+	city_form.style.cssText = "display: none;"
+	city_text.style.cssText = "display: block;"
+	city_text.textContent = "Ваш город: " + city_cookie
 }
 
+btn_city_clr.onclick = () =>{
+	document.cookie = "city=none; max-age=0";
+	btn_city.style.cssText = "display: inline-block;"
+	btn_city_clr.style.cssText = "display: none;"
+	city_form.style.cssText = "display: block;"
+	city_text.style.cssText = "display: none;"
+	city.value = ""
+}
 
+function getCookie(name) {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+ return matches ? decodeURIComponent(matches[1]) : undefined;
+}
 
+let city_cookie = getCookie("city")
 
-
-
-// b_cats.onclick = () =>{
-// 	vote('cats')
-// 	voteDone()
-// }
-
-
-// ES.onmessage = message => {
-//     const votes = JSON.parse(message.data)
-//     const sum = votes["cats"] + votes["parrots"] + votes["dogs"]
-//     let cats_p = votes["cats"]/sum*100
-//     cats_p = cats_p.toFixed(2)
-//     let parrots_p = votes["parrots"]/sum*100
-//     parrots_p = parrots_p.toFixed(2)
-//     let dogs_p = votes["dogs"]/sum*100
-//     dogs_p = dogs_p.toFixed(2)
-//     cats.style.cssText = `width: ${cats_p}%;`
-//     cats.textContent = `${votes["cats"]}${make_russian(votes["cats"])} - ${cats_p}%`
-//     parrots.style.cssText = `width: ${parrots_p}%;`
-//     parrots.textContent = `${votes["parrots"]}${make_russian(votes["parrots"])} - ${parrots_p}%`
-//     dogs.style.cssText = `width: ${dogs_p}%;`
-//     dogs.textContent = `${votes["dogs"]}${make_russian(votes["dogs"])} - ${dogs_p}%`
-// }
+if (city_cookie) {
+	btn_city.style.cssText = "display: none;"
+	btn_city_clr.style.cssText = "display: inline-block;"
+	city_form.style.cssText = "display: none;"
+	city_text.style.cssText = "display: block;"
+	city_text.textContent = "Ваш город: " + city_cookie	
+} else {
+	btn_city.style.cssText = "display: inline-block;"
+	btn_city_clr.style.cssText = "display: none;"
+	city_form.style.cssText = "display: block;"
+	city_text.style.cssText = "display: none;"
+	city.value = ""	
+}
