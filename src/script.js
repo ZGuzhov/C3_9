@@ -50,12 +50,12 @@ if (city_cookie) {
 }
 
 const btn_checkbox = document.querySelector('.btn-checkbox')
-var ch1 = document.querySelector('input[id=Check1]')
-var ch2 = document.querySelector('input[id=Check2]')
-var ch3 = document.querySelector('input[id=Check3]')
-var ch4 = document.querySelector('input[id=Check4]')
-var ch5 = document.querySelector('input[id=Check5]')
-var ch6 = document.querySelector('input[id=Check6]')
+const ch1 = document.querySelector('input[id=Check1]')
+const ch2 = document.querySelector('input[id=Check2]')
+const ch3 = document.querySelector('input[id=Check3]')
+const ch4 = document.querySelector('input[id=Check4]')
+const ch5 = document.querySelector('input[id=Check5]')
+const ch6 = document.querySelector('input[id=Check6]')
 
 btn_checkbox.onclick = () =>{
 	let key = ""
