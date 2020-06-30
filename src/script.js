@@ -2,7 +2,7 @@ const city = document.querySelector('.city')
 const btn_city = document.querySelector('.btn-city')
 
 btn_city.onclick = () =>{
-	document.cookie = "city=${city.textContent}";
+	document.cookie = "city=" + city.value;
 	console.log(document.cookie);
 }
 
