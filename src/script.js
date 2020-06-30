@@ -48,3 +48,47 @@ if (city_cookie) {
 	city_text.style.cssText = "display: none;"
 	city.value = ""	
 }
+
+const btn_checkbox = document.querySelector('.btn-checkbox')
+var ch1 = document.querySelector('input[id=Check1]')
+var ch2 = document.querySelector('input[id=Check2]')
+var ch3 = document.querySelector('input[id=Check3]')
+var ch4 = document.querySelector('input[id=Check4]')
+var ch5 = document.querySelector('input[id=Check5]')
+var ch6 = document.querySelector('input[id=Check6]')
+
+btn_checkbox.onclick = () =>{
+	let key = ""
+	if (ch1.checked) {key="1"} else {key="0"}
+	if (ch2.checked) {key+="1"} else {key+="0"}
+	if (ch3.checked) {key+="1"} else {key+="0"}
+	if (ch4.checked) {key+="1"} else {key+="0"}
+	if (ch5.checked) {key+="1"} else {key+="0"}
+	if (ch6.checked) {key+="1"} else {key+="0"}
+	document.cookie = "ch=" + key
+	btn_checkbox.style.cssText = "display: none;"
+	ch1.disabled = true
+	ch2.disabled = true
+	ch3.disabled = true
+	ch4.disabled = true
+	ch5.disabled = true
+	ch6.disabled = true
+}
+
+let ch_cookie = getCookie("ch")
+
+if (ch_cookie) {
+	if (ch_cookie[0] === "0") {ch1.checked = False} else {ch1.checked = True}
+	if (ch_cookie[1] === "0") {ch2.checked = False} else {ch2.checked = True}
+	if (ch_cookie[2] === "0") {ch3.checked = False} else {ch3.checked = True}
+	if (ch_cookie[3] === "0") {ch4.checked = False} else {ch4.checked = True}
+	if (ch_cookie[4] === "0") {ch5.checked = False} else {ch5.checked = True}
+	if (ch_cookie[5] === "0") {ch6.checked = False} else {ch6.checked = True}
+	btn_checkbox.style.cssText = "display: none;"
+	ch1.disabled = true
+	ch2.disabled = true
+	ch3.disabled = true
+	ch4.disabled = true
+	ch5.disabled = true
+	ch6.disabled = true
+}
