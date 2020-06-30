@@ -5,12 +5,12 @@ const btn_city = document.querySelector('.btn-city')
 const btn_city_clr = document.querySelector('.btn-city-clr')
 
 btn_city.onclick = () =>{
-	document.cookie = "city=" + city.value;
+	document.cookie = "city=" + city.value
 	btn_city.style.cssText = "display: none;"
 	btn_city_clr.style.cssText = "display: inline-block;"
 	city_form.style.cssText = "display: none;"
 	city_text.style.cssText = "display: block;"
-	city_text.textContent = "Ваш город: " + city_cookie
+	city_text.textContent = "Ваш город: " + city.value
 }
 
 btn_city_clr.onclick = () =>{
